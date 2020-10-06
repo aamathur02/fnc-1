@@ -10,6 +10,7 @@ from Word2VecFeatureGenerator import *
 from SentimentFeatureGenerator import *
 #from AlignmentFeatureGenerator import *
 
+
 def process():
 
     read = False
