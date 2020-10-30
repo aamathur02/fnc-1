@@ -77,7 +77,7 @@ def stack_test():
     pred_y_idx = np.argmax(pred_y, axis=1)
     predicted = [LABELS[int(a)] for a in pred_y_idx]
     
-    stances = pd.read_csv("test_stances_unlabeled_processed.csv")
+    stances = pd.read_csv("test_stances_unlabeled.csv")
     df_output = pd.DataFrame()
     df_output['Headline'] = stances['Headline']
     df_output['Body ID'] = stances['Body ID']

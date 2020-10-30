@@ -39,8 +39,8 @@ num_round = 1000
 def build_data():
     
     # create target variable
-    body = pd.read_csv("train_bodies.csv")
-    stances = pd.read_csv("train_stances.csv")
+    body = pd.read_csv("train_bodies_processed.csv")
+    stances = pd.read_csv("train_stances_processed.csv")
     data = pd.merge(stances, body, how='left', on='Body ID')
     targets = ['agree', 'disagree', 'discuss', 'unrelated']
     targets_dict = dict(zip(targets, range(len(targets))))
@@ -80,7 +80,7 @@ def build_test_data():
     
     # create target variable
     # replace file names when test data is ready
-    body = pd.read_csv("test_bodies.csv")
+    body = pd.read_csv("test_bodies_processed.csv")
     stances = pd.read_csv("test_stances_unlabeled.csv") # needs to contain pair id
     data = pd.merge(stances, body, how='left', on='Body ID')
     
@@ -179,7 +179,7 @@ def train():
     #print predicted
 
     # save (id, predicted and probabilities) to csv, for model averaging
-    stances = pd.read_csv("test_stances_unlabeled_processed.csv") # same row order as predicted
+    stances = pd.read_csv("test_stances_unlabeled.csv") # same row order as predicted
     
     df_output = pd.DataFrame()
     df_output['Headline'] = stances['Headline']
@@ -216,8 +216,8 @@ def cv():
     #return 1
     
     # to obtain test dataframe for model averaging
-    body = pd.read_csv("train_bodies.csv")
-    stances = pd.read_csv("train_stances.csv")
+    body = pd.read_csv("train_bodies_processed.csv")
+    stances = pd.read_csv("train_stances_processed.csv")
     data = pd.merge(stances, body, how='left', on='Body ID')
     targets = ['agree', 'disagree', 'discuss', 'unrelated']
     targets_dict = dict(zip(targets, range(len(targets))))
@@ -368,8 +368,8 @@ def cv():
 def show_incorrect_pred(actual, predicted, idx_valid):
 
     # create target variable
-    body = pd.read_csv("train_bodies.csv")
-    stances = pd.read_csv("train_stances.csv")
+    body = pd.read_csv("train_bodies_processed.csv")
+    stances = pd.read_csv("train_stances_processed.csv")
     data = pd.merge(body, stances, how='right', on='Body ID')
 
     targets = ['agree', 'disagree', 'discuss', 'unrelated']
