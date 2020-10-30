@@ -8,7 +8,7 @@ from helpers import *
 import sys
 sys.path.append('./mscproject/bin')
 sys.path.append('./mscproject/src')
-from run_calc_hungarian_alignment_score import *
+#from run_calc_hungarian_alignment_score import *
 
 class AlignmentFeatureGenerator(FeatureGenerator):
 

@@ -283,9 +283,9 @@ if __name__ == '__main__':
 
 
 
-    news = News(stances='train.csv', bodies='train_bodies.csv', vecs=v)
+    news = News(stances='train.csv', bodies='train_bodies_processed.csv', vecs=v)
     #FNC Baseline training set
-    val_news = News(stances='test.csv', bodies='train_bodies.csv', vecs=v)
+    val_news = News(stances='test.csv', bodies='train_bodies_processed.csv', vecs=v)
     #FNC baseline validation set
     test_news = News(stances='test_stances_unlabeled.csv', vecs=v, bodies='test_bodies.csv')
     #FNC final test set

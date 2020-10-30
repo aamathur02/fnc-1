@@ -89,7 +89,7 @@ def proc_bodies(fn):
 class News(object):
     #object for processing and presenting news to clf
 
-    def __init__(self, stances='train_stances.csv',bodies='train_bodies.csv',vecs=None):
+    def __init__(self, stances='train_stances_processed.csv',bodies='train_bodies_processed.csv',vecs=None):
         #process files into arrays, etc
         self.bodies = proc_bodies(bodies)
         self.headlines = []

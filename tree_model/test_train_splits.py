@@ -99,8 +99,8 @@ stance = 'Stance'
 headline = 'Headline'
 body = 'articleBody'
 
-stances = pd.read_csv('train_stances.csv', encoding='utf-8')
-bodies = pd.read_csv('train_bodies.csv', encoding='utf-8')
+stances = pd.read_csv('train_stances_processed.csv', encoding='utf-8')
+bodies = pd.read_csv('train_bodies_processed.csv', encoding='utf-8')
 
 df = stances.merge(bodies,on='Body ID')
 
